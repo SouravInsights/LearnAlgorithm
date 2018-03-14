@@ -76,22 +76,14 @@ h1 {
 
 
 #img1 {
-    position: absolute;
-    top: 1800px;
     left: 100px;
 }
 #img2 {
-    position: absolute;
     right: 100px;
-    top: 1820px;
 }
 #img3 {
-    position: absolute;
     left: 100px;
-    top: 2250px;
 }
 #img4 {
-    position: absolute;
-    top: 2250px;
     right: 100px;
 }
