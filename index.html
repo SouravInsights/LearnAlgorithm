@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>The Old Coder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<link rel="stylesheet" href="main.css">
+     
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  
+</head>
+
+<body>
+
+  
+<html>
+<body style="background-image:url()">
+<nav class="navbar navbar-expand-lg fixed-top ">
+	  <center> <a class="navbar-brand" href="#">Learn Algorithm</a></center>
+	 
+
+</nav>
+    
+    
+  <header>
+  <h1>
+    <span style="color: white">Informed Search Strategies</span>
+    <span></span>
+  </h1>
+  </header>    
+  
+    <h2></h2>
+  <p style="text-align:justify; font-family:Consolas">This section shows how an <b>informed search strategy</b> - one that uses problem-specific knowledge beyond the definition of the
+			problem itself - can find solutions more efficiently than can an uninformed search strategy.</p>
+  <p style="text-align:justify; font-family:Consolas">The general approach we consider is called <b>best first search.</b> Best-first search is an instance of the general 
+			<bdo style="font-family:Felix Titling">Tree-Search or Graph-Search</bdo> algorithm in which a node is selected for expansion based on an <b>evaluation function</b>,
+			<i>f(n)</i>. The evaluation function is construed as a cost-estimate, so the node with the <i>lowest</i> evaluation is expanded first. The implementation of 
+			best first graph search is identical to that for <a name="UniformCostSearch"><b>Uniform-Cost Search</b></a>, except for the use of <i>f</i> instead of <i>g</i>
+			to order the priority queue.</p>
+    
+ <p style="text-align:justify; font-family:Consolas">The choice of <i>f</i> determines the search strategy. Most best-fit algorithms include as a component of <i>f</i> a 
+			<b>heuristic function</b> denoted <i>h(n):</i></p>
+  <p style="text-align:center"><i>h(n)</i> = estimated cost of the cheapest path from the state at node <i>n</i> to a goal state.</p>
+ <p style="text-align:justify; font-family:Consolas">Notice that <i>h(n)</i> takes a <i>node</i> as an input, but, unlike <i>g(n)</i> it depends only on the <i>state</i> at that node.
+			For example, one might estimate the cost of the cheapest path from Arad to Bucharest via the straight-line distance from Arad to Bucharest.</p>
+ <p style="text-align:justify; font-family:Consolas">Heuristic functions are the most common form in which additional knowledge of the problem is imparted to the search algorithm. 
+			We also consider them to be arbitrary, nonnegative, problem specific functions, with one constraint: if <i>n</i> is a goal node, then <i>h(n)=0.</i>
+			Following are two ways to use heuristic information to guide search.</p>
+
+    
+    
+  <header>
+  <h1 style="padding-top: 2px">
+    <span style="color: white">Greedy BFS</span>
+    <span></span>
+  </h1>
+  </header>     
+    
+    <p style="text-align:justify; font-family:Consolas"><b>Greedy best-first search</b> tries to expand the node that is closest to the goal, on the grounds that it is likely to lead
+			to a solution quickly. Thus, it evaluates nodes by using just the heuristic function; that is, <i>f(n)=h(n).</i></p>
+    <p style="text-align:justify; font-family:Consolas">Let us see how this works for the route-finding problems in Romania; we use the <b>straight-line distance heuristic,</b> which
+			we will call <i>h<sub>SLD</sub></i>. If the goal is Bucharest, we need to know the straight-line distances to Bucharest, which are shown in Figure ISS-1:</p>
+ 
+ 
+    
+</body>
+</html>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+
+</body>
+
+</html>
