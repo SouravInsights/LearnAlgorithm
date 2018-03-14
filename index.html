@@ -51,8 +51,7 @@
 			For example, one might estimate the cost of the cheapest path from Arad to Bucharest via the straight-line distance from Arad to Bucharest.</p>
  <p style="text-align:justify; font-family:Consolas">Heuristic functions are the most common form in which additional knowledge of the problem is imparted to the search algorithm. 
 			We also consider them to be arbitrary, nonnegative, problem specific functions, with one constraint: if <i>n</i> is a goal node, then <i>h(n)=0.</i>
-			Following are two ways to use heuristic information to guide search.</p>
-
+			Following are two ways to use heuristic information to guide search.</p><br>
     
     
   <header>
@@ -60,15 +59,28 @@
     <span style="color: white">Greedy BFS</span>
     <span></span>
   </h1>
-  </header>     
+  </header><br><br>
     
-    <p style="text-align:justify; font-family:Consolas"><b>Greedy best-first search</b> tries to expand the node that is closest to the goal, on the grounds that it is likely to lead
+     <p style="text-align:justify; font-family:Consolas"><b>Greedy best-first search</b> tries to expand the node that is closest to the goal, on the grounds that it is likely to lead
 			to a solution quickly. Thus, it evaluates nodes by using just the heuristic function; that is, <i>f(n)=h(n).</i></p>
-    <p style="text-align:justify; font-family:Consolas">Let us see how this works for the route-finding problems in Romania; we use the <b>straight-line distance heuristic,</b> which
-			we will call <i>h<sub>SLD</sub></i>. If the goal is Bucharest, we need to know the straight-line distances to Bucharest, which are shown in Figure ISS-1:</p>
+    <p style="text-align:justify; font-family:Consolas">Let us see how this works for the route-finding problems. Here we use the <b>straight-line distance heuristic,</b> which
+			we will call <i>h<sub>SLD</sub></i>. If the goal node is I, we need to know the straight-line distances to the node I, which are shown below:</p>
  
+
+  <header>
+  <h1 style="padding-top: 2px">
+    <span style="color: white">Visualization</span>
+    <span></span>
+  </h1>
+  </header><br>
     
-    <img src="nodes.jpg" style="float: left"> <img src="nodes.jpg"> 
+    <img id="img1" src="nodes.jpg"> <img id="img2" src="EA.jpg"> 
+    <img id="img3" src="EB.jpg"> <img id="img4" src="EF.jpg"> <br><br>
+    
+    <p style="text-align:justify; font-family:Consolas">The first node to be expanded from A will be B because it is closer to I than either B or C.
+			The next node to be expanded will be F because it is closest. F, in turn, generates I, which is the goal. For this particular problem,
+			greedy best-first search using <i>h<sub>SLD</sub></i>  finds a solution without ever expanding a node that is not on the solution path; hence, its search
+			cost is minimal. This shows why the algorithm is called "Greedy" - at each step it tries to get as close to the goal as it can.</p>
     
  
     
