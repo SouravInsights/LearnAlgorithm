@@ -16,7 +16,6 @@ h1 {
   font-size: 2em;
   font-weight: 500;
   line-height: 1.5;
-  text-transform: uppercase;
   color: #fff;
     
   font-family: Georgia;
@@ -66,6 +65,17 @@ h1 {
      margin-bottom: 20px;
    }
    
+ article {
+      max-width: 800px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+.art {
+    max-width: 500px;
+    padding: 0px;
+    margin: 0 auto;
+}
+
    p {
      font-family: Georgia;
      font-size: 25px;
@@ -86,4 +96,152 @@ h1 {
 }
 #img4 {
     right: 100px;
+}
+
+
+
+
+.gameboard {
+    width: 430px;
+    height:420px;
+    border:3px solid white;
+    z-index: 1;
+
+}
+
+.wrapper {
+    width: 430px;
+    margin:0 auto;
+}
+
+
+.row1, .row2, .row3, .row4, .row5, .row6, .row7, .row8,  {
+    clear:both;
+
+}
+
+#cell1,#cell2,#cell3,#cell4 {
+    width:50px;
+    height:50px;
+    border:3px solid black;
+    float: left;
+
+}
+
+#cell5,#cell6,#cell7,#cell8 {
+    width:50px;
+    height:50px;
+float: left;
+    border:3px solid black;
+}
+
+#cell9,#cell10,#cell11, #cell12 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell13,#cell14,#cell15, #cell16 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell17,#cell18,#cell19, #cell20 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell21,#cell22,#cell23, #cell24 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+
+#cell25,#cell26,#cell27, #cell28 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+
+#cell29,#cell30,#cell31, #cell32 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell33,#cell34,#cell35, #cell36 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell37,#cell38,#cell39, #cell40 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell41,#cell42,#cell43, #cell44 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell45,#cell46,#cell47, #cell48 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell49,#cell50,#cell51, #cell52 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell53,#cell54,#cell55, #cell56 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell57,#cell58,#cell59, #cell60 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+
+}
+#cell61,#cell62,#cell63, #cell64 {
+    width:50px;
+    height:50px;
+    float: left;
+    border:3px solid black;
+}
+
+#cell11, #cell47{
+    background-color: blue;
+}
+p.fst {
+    font-size: 23px;
+    padding-left: 17px;
+    color: white;
+    font-family: sans-serif;
+
 }

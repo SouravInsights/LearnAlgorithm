@@ -6,15 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Learn Algorithm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
-<link rel="stylesheet" href="main.css">
-     
+<link rel="stylesheet" href="main.css">     
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  
-  
-</head>
+<link rel="stylesheet" href="http://www.atlasestateagents.co.uk/css/tether.min.css">
+<script src="http://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> 
+<head>
 
 <body>
 
@@ -22,75 +20,180 @@
 <html>
 <body style="background-image:url()">
 <nav class="navbar navbar-expand-lg fixed-top ">
-	  <center> <a class="navbar-brand" href="#">Learn Algorithm</a></center>
+	  <center> <a class="navbar-brand" href="#">Greedy Best First Search</a></center>
 	 
 
 </nav>
     
     
   <header>
-  <h1>
-    <span style="color: white">Informed Search Strategies</span>
-    <span></span>
-  </h1>
   </header>    
-  
-    <h2></h2>
-  <p style="text-align:justify; font-family:Consolas">This section shows how an <b>informed search strategy</b> - one that uses problem-specific knowledge beyond the definition of the
-			problem itself - can find solutions more efficiently than can an uninformed search strategy.</p>
-  <p style="text-align:justify; font-family:Consolas">The general approach we consider is called <b>best first search.</b> Best-first search is an instance of the general 
-			<bdo style="font-family:Felix Titling">Tree-Search or Graph-Search</bdo> algorithm in which a node is selected for expansion based on an <b>evaluation function</b>,
-			<i>f(n)</i>. The evaluation function is construed as a cost-estimate, so the node with the <i>lowest</i> evaluation is expanded first. The implementation of 
-			best first graph search is identical to that for <a name="UniformCostSearch"><b>Uniform-Cost Search</b></a>, except for the use of <i>f</i> instead of <i>g</i>
-			to order the priority queue.</p>
-    
- <p style="text-align:justify; font-family:Consolas">The choice of <i>f</i> determines the search strategy. Most best-fit algorithms include as a component of <i>f</i> a 
-			<b>heuristic function</b> denoted <i>h(n):</i></p>
-  <p style="text-align:center"><i>h(n)</i> = estimated cost of the cheapest path from the state at node <i>n</i> to a goal state.</p>
- <p style="text-align:justify; font-family:Consolas">Notice that <i>h(n)</i> takes a <i>node</i> as an input, but, unlike <i>g(n)</i> it depends only on the <i>state</i> at that node.
-			For example, one might estimate the cost of the cheapest path from Arad to Bucharest via the straight-line distance from Arad to Bucharest.</p>
- <p style="text-align:justify; font-family:Consolas">Heuristic functions are the most common form in which additional knowledge of the problem is imparted to the search algorithm. 
-			We also consider them to be arbitrary, nonnegative, problem specific functions, with one constraint: if <i>n</i> is a goal node, then <i>h(n)=0.</i>
-			Following are two ways to use heuristic information to guide search.</p><br>
-    
+  <h2></h2><br><br><br>    
     
   <header>
-  <h1 style="padding-top: 2px">
-    <span style="color: white">Greedy BFS</span>
-    <span></span>
-  </h1>
-  </header><br><br>
-    
-     <p style="text-align:justify; font-family:Consolas"><b>Greedy best-first search</b> tries to expand the node that is closest to the goal, on the grounds that it is likely to lead
-			to a solution quickly. Thus, it evaluates nodes by using just the heuristic function; that is, <i>f(n)=h(n).</i></p>
-    <p style="text-align:justify; font-family:Consolas">Let us see how this works for the route-finding problems. Here we use the <b>straight-line distance heuristic,</b> which
-			we will call <i>h<sub>SLD</sub></i>. If the goal node is I, we need to know the straight-line distances to the node I, which are shown below:</p>
- 
-
-  <header>
-  <h1 style="padding-top: 2px">
-    <span style="color: white">Visualization</span>
-    <span></span>
-  </h1>
+    <h1 style="padding-top: 16px">
+    <span style="color: white">What is Greedy Best First Search Algorithm?</span>
+    </h1>
   </header><br>
     
-    <img id="img1" src="nodes.jpg">
-    <img id="img2" src="EA.jpg"> 
-    <img id="img3" src="EB.jpg">
-    <img id="img4" src="EF.jpg"><br><br>
+  <article>
+    <p style="text-align:justify; font-family:Consolas"><b>Greedy best-first search</b> tries to expand the node that is closest to the goal, on the grounds that it is likely to lead
+			to a solution quickly. Thus, it evaluates nodes by using just the heuristic function; that is, <i>f(n)=h(n).</i></p>
+    <p style="text-align:justify; font-family:Consolas">Let us see how this works for the route-finding problems. Here we use the <b>straight-line distance heuristic,</b> which we will call <i>h<sub>SLD</sub></i>. If the goal node is I, we need to know the straight-line distances to the node I, which is shown below:</p>
+  </article>
     
+
+    <header>
+    <h1 style="padding-top: 2px">
+    <span style="color: white">Static Visualization</span>
+    <span></span>
+    </h1>
+    </header><br>
+    
+    
+    <article class="art">
+    <img id="img1" src="images/nodes.jpg">
+    <img id="img2" src="images/EA.jpg"> 
+    <img id="img3" src="images/EB.jpg">
+    <img id="img4" src="images/EF.jpg"><br><br>
+    </article>
+    
+    <article>
     <p style="text-align:justify; font-family:Consolas">The first node to be expanded from A will be B because it is closer to I than either B or C.
 			The next node to be expanded will be F because it is closest. F, in turn, generates I, which is the goal. For this particular problem,
 			greedy best-first search using <i>h<sub>SLD</sub></i>  finds a solution without ever expanding a node that is not on the solution path; hence, its search
-			cost is minimal. This shows why the algorithm is called "Greedy" - at each step it tries to get as close to the goal as it can.</p>
+			cost is minimal. This shows why the algorithm is called "Greedy" - at each step it tries to get as close to the goal as it can.</p> 
+    </article>
+    
+    <header>
+    <h1 style="padding-top: 2px">
+    <span style="color: white">Dynamic Visualization</span>
+    <span></span>
+    </h1>
+    </header><br>
+    
+    <article>
+        <div class="wrapper">
+        <div class="gameboard">
+            
+            
+            <h3>Let's click the node S</h3>
+            <div class="Row1">
+                <div id="cell1"></div>
+                <div id="cell2"></div>
+                <div id="cell3"></div>
+                <div id="cell4"></div>
+            </div>
+
+            <div class="Row2">
+                <div id="cell5"></div>
+                <div id="cell6"></div>
+                <div id="cell7"></div>
+                <div id="cell8"></div>
+            </div>
+
+            <div class="Row3">
+                <div id="cell9"></div>
+                <div id="cell10"></div>
+                <div id="cell11">
+                <p class="fst">S</p>
+                </div>
+                <div id="cell12"></div>
+            </div>
+            
+            <div class="Row4">
+                <div id="cell13"></div>
+                <div id="cell14"></div>
+                <div id="cell15"></div>
+                <div id="cell16"></div>
+            </div>
+            <div class="Row5">
+                <div id="cell17"></div>
+                <div id="cell18"></div>
+                <div id="cell19"></div>
+                <div id="cell20"></div>
+            </div>
+            <div class="Row6">
+                <div id="cell21"></div>
+                <div id="cell22"></div>
+                <div id="cell23"></div>
+                <div id="cell24"></div>
+            </div>
+            <div class="Row7">
+                <div id="cell25"></div>
+                <div id="cell26"></div>
+                <div id="cell27"></div>
+                <div id="cell28"></div>
+            </div>
+            <div class="Row8">
+                <div id="cell29"></div>
+                <div id="cell30"></div>
+                <div id="cell31"></div>
+                <div id="cell32"></div>
+            </div>
+             <div class="Row9">
+                <div id="cell33"></div>
+                <div id="cell34"></div>
+                <div id="cell35"></div>
+                <div id="cell36"></div>
+            </div>
+             <div class="Row10">
+                <div id="cell37"></div>
+                <div id="cell38"></div>
+                <div id="cell39"></div>
+                <div id="cell40"></div>
+            </div>
+            <div class="Row11">
+                <div id="cell41"></div>
+                <div id="cell42"></div>
+                <div id="cell43"></div>
+                <div id="cell44"></div>
+            </div>
+            <div class="Row12">
+                <div id="cell45"></div>
+                <div id="cell46"></div>
+                <div id="cell47">
+                <p class="fst">F</p>
+                </div>
+                <div id="cell48"></div>
+            </div>
+            <div class="Row13">
+                <div id="cell49"></div>
+                <div id="cell50"></div>
+                <div id="cell51"></div>
+                <div id="cell52"></div>
+            </div>
+            <div class="Row14">
+                <div id="cell53"></div>
+                <div id="cell54"></div>
+                <div id="cell55"></div>
+                <div id="cell56"></div>
+            </div>
+             <div class="Row15">
+                <div id="cell57"></div>
+                <div id="cell58"></div>
+                <div id="cell59"></div>
+                <div id="cell60"></div>
+            </div>
+             <div class="Row16">
+                <div id="cell61"></div>
+                <div id="cell62"></div>
+                <div id="cell63"></div>
+                <div id="cell64"></div>
+            </div>
+        </div>
+        </div>
+    </article>
+    <article></article>
     
  
-    
+<script src="main.js"></script>    
 </body>
 </html>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src="nodeExpansion.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+
+
 
   
 
