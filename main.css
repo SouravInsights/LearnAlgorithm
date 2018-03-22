@@ -25,6 +25,9 @@ h1 {
      font-size: 35px;
 }
 
+mark {
+    background-color: red;
+}
 
 @media only screen and (max-width: 55em) and (min-width: 25em) {
   h1 span {
