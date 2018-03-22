@@ -1,6 +1,10 @@
 {
- "name": "App",
- "icons": [
+  "name": "Learn Algorithm",
+  "short_name": "LearnAlgo",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "icons": [
   {
    "src": "icons/android-icon-36x36.png",
    "sizes": "36x36",
