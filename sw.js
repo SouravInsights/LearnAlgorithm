@@ -1,7 +1,9 @@
 var cacheName = 'LearnAlgo';
 var filesToCache = [
-  '/',
-  '/index.html'
+  './',
+  '/index.html',
+  'style.css',
+  'main.js'
 ];
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
