@@ -1,7 +1,7 @@
 var cacheName = 'LearnAlgo';
 var filesToCache = [
   './',
-  '/index.html',
+  'index.html',
   'style.css',
   'main.js'
 ];
