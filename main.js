@@ -14,15 +14,15 @@ $( "#cell12" ).click(function() {
  
 
 $( "#cell20" ).click(function() {
-     if($('#cell11').data('clicked') == true) {
-       $( "#cell20" ).addClass("yellow");
-       $( "#cell21, #cell28" ).addClass("green");      
+     if($( "#cell11", "#cell12" ).data('clicked') == true) {
+            $( "#cell20" ).addClass("yellow");
+            $( "#cell21, #cell28" ).addClass("green");      
      }
  
 });
 
 $( "#cell28" ).click(function() {
-     if($('#cell11').data('clicked') == true) {
+     if($( '#cell11' ).data('clicked') == true) {
         $( "#cell28" ).addClass("yellow");
         $( "#cell27, #cell29 ,#cell36" ).addClass("green");
      }
