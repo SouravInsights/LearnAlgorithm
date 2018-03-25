@@ -308,6 +308,10 @@ li {
      margin-top: 10px;
 }
 
-.color { 
+.green { 
     background-color: #00e500;
+}
+
+.yellow { 
+    background-color: #e6e600;
 }
