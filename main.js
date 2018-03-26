@@ -14,7 +14,7 @@ $( "#cell12" ).click(function() {
  
 
 $( "#cell20" ).click(function() {
-     if($( "#cell11", "#cell12" ).data('clicked') == true) {
+     if($( "#cell11" ).data('clicked') == true) {
             $( "#cell20" ).addClass("yellow");
             $( "#cell21, #cell28" ).addClass("green");      
      }
