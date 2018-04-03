@@ -1,114 +1,47 @@
-$( "#cell11" ).click(function() {
-   $(this).data('clicked', true);
-  $( "#cell3, #cell10, #cell12, #cell19").addClass("green"); 
-});
+const cells = document.getElementsByClassName('cell');
+const shortestPathNodes = [10,11,19,27,26,25,24,32,40,48,49,50,51,43,44,45,46];
 
+let activeNodeIndex = -1;
 
-$( "#cell12" ).click(function() { 
-        if($('#cell11').data('clicked') == true) {
-          $( "#cell12" ).addClass("yellow");  
-          $( "#cell4, #cell13, #cell20" ).addClass("green");
+const adjacencyList = {
+    "10":[2,9,11,18],
+    "11":[3,12,19],
+    "19":[20,27],
+    "27":[26,28,35],
+    "26":[25,34],
+    "25":[17,24,33],
+    "24":[16,32],
+    "32":[40],
+    "40":[48,41],
+    "48":[56,49],
+    "49":[50,57],
+    "50":[42,51,58],
+    "51":[52,43,59],
+    "43":[36,44],
+    "44":[45],
+    "45":[46]
+}
+
+let activeListeneresOn = [];
+
+function addListener(){
+    activeNodeIndex += 1;
+    let activeNode = shortestPathNodes[activeNodeIndex];
+    if(activeNodeIndex === shortestPathNodes.length-1){
+        alert('You Won!!');
+        return;
+    }
+    cells[activeNode]
+    .addEventListener('click',(e)=>{
+        for(const i of adjacencyList[activeNode]){
+            cells[i].classList.add('green');
         }
-     
-});
- 
+        if(activeNodeIndex !== 0)
+            e.target.parentElement.classList.add('yellow');
+        if(activeNodeIndex < shortestPathNodes.length) 
+            addListener();
+    })
+    activeListeneresOn.push(activeNode);
+}
 
-$( "#cell20" ).click(function() {
-     if($( "#cell11" ).data('clicked') == true) {
-            $( "#cell20" ).addClass("yellow");
-            $( "#cell21, #cell28" ).addClass("green");      
-     }
- 
-});
-
-$( "#cell28" ).click(function() {
-     if($( '#cell11' ).data('clicked') == true) {
-        $( "#cell28" ).addClass("yellow");
-        $( "#cell27, #cell29 ,#cell36" ).addClass("green");
-     }
-});
-
-$( "#cell27" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell27" ).addClass("yellow");
-     $( "#cell26, #cell35" ).addClass("green");
-    }
-});
-
-$( "#cell26" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell26" ).addClass("yellow");
-     $( "#cell18, #cell25, #cell34" ).addClass("green");
-    }
-});
-
-$( "#cell25" ).click(function() {
-     if($('#cell11').data('clicked') == true) {
-     $( "#cell25" ).addClass("yellow");
-     $( "#cell17, #cell33" ).addClass("green");
-     }
-});
-
-$( "#cell33" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell33" ).addClass("yellow");
-     $( "#cell41" ).addClass("green");
-    }
-});
-
-$( "#cell41" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell41" ).addClass("yellow");
-     $( "#cell49, #cell42" ).addClass("green");
-    }
-});
-
-$( "#cell49" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell49" ).addClass("yellow");
-     $( "#cell57, #cell50" ).addClass("green");
-    }
-});
-
-$( "#cell50" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell50" ).addClass("yellow");
-     $( "#cell51, #cell58" ).addClass("green");
-    }
-});
-
-$( "#cell51" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell51" ).addClass("yellow");
-     $( "#cell43, #cell52, #cell59" ).addClass("green");
-    }
-});
-
-$( "#cell52" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell52" ).addClass("yellow");
-     $( "#cell53, #cell44, #cell60" ).addClass("green");
-    }
-});
-
-$( "#cell44" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell44" ).addClass("yellow");
-     $( "#cell37, #cell45" ).addClass("green");
-    }
-});
-
-$( "#cell45" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell45" ).addClass("yellow");
-     $( "#cell46" ).addClass("green");
-    }
-});
-
-$( "#cell46" ).click(function() {
-    if($('#cell11').data('clicked') == true) {
-     $( "#cell46" ).css("background-color", "#e6e600");
-     alert("You Win")
-     $("#cell47").animate({backgroundColor:'#000080'});
-    }
-});
+window.onload = addListener;
